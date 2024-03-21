@@ -1,0 +1,7 @@
+pip freeze | less
+
+git status
+git add * #add all this
+git commit -m "the commit"
+git push
+
