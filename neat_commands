@@ -5,7 +5,33 @@ git add * #add all this
 git commit -m "the commit"
 git push
 
-
-
 # deploy App Engine
 gcloud config set app/cloud_build_timeout 1600
+
+# aws AI apis
+aws comprehend help
+aws comprehend detect-sentiment --language-code "en" --text "$TEXT"
+aws comprehend detect-entities --language-code "en" --text "$TEXT" --output text | head
+aws comprehend detect-entities --language-code "en" --text "$TEXT" --output text | head -n 25
+# count entities instances on reponse
+aws comprehend detect-entities \
+  --language-code "en" \
+  --text "$TEXT" \
+  --output text \
+  | cut -f 5 \
+  | tr -cd "[:alpha:][:space:]" \
+  | tr ' [:upper:]' '\n[:lower:]' \
+  | tr -s '\n' \
+  | sort \
+  | uniq -c \
+  | sort -nr -k 1 \
+  | head
+
+
+# lyc
+sudo yum install lynx
+lynx -dump url | less
+lynx -dump url | wc -l #number of lines
+lynx -dump url | wc --bytes
+TEXT=`lynx -dump url | head -c 5000` # pull 5000 bytes of text from url
+
