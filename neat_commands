@@ -28,7 +28,7 @@ aws comprehend detect-entities \
   | head
 
 
-# lyc
+# lynx
 sudo yum install lynx
 lynx -dump url | less
 lynx -dump url | wc -l #number of lines
