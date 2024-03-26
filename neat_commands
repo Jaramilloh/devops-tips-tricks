@@ -1,4 +1,8 @@
-pip freeze | less
+#python cool commands
+python3 -m venv ~/.venv && source ~/.venv/bin/activate
+pip install black # format tool
+black file.py
+pip freeze | less # format tool
 
 git status
 git add * #add all this
@@ -26,6 +30,9 @@ aws comprehend detect-entities \
   | uniq -c \
   | sort -nr -k 1 \
   | head
+aws s3 help
+aws s3 ls | wc -l
+pip install boto3 # use s3 services on python
 
 
 # lynx
