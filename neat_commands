@@ -33,6 +33,7 @@ aws comprehend detect-entities \
 aws s3 help
 aws s3 ls | wc -l
 pip install boto3 # use s3 services on python
+aws s3 cp help | less | grep "aws s3 cp"
 
 
 # lynx
