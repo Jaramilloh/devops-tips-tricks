@@ -35,6 +35,10 @@ aws s3 ls | wc -l
 pip install boto3 # use s3 services on python
 aws s3 cp help | less | grep "aws s3 cp"
 
+# boto3 
+import boto3
+client = boto3.client("comprehend")
+client.detect_sentiment(Text=text, LanguageCode='en')
 
 # lynx
 sudo yum install lynx
